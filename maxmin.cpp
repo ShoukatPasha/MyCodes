@@ -1,19 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int findMaxRecursive(int n, int a[])
+int findminRecursive(int n, int a[])
 {
     if (n == 1) {
         return a[0];
     }
 
    
-    int maxRest = findMaxRecursive(n - 1, a);
+    int minRest = findminRecursive(n-1, a);
 
-    if (a[n - 1] > maxRest) {
+    if (a[n-1] <minRest) {
         return a[n - 1];
     } else {
-        return maxRest;
+        return minRest;
     }
 }
 
@@ -28,9 +28,9 @@ int main()
         cin >> a[i];
     }
 
-    int maxElement = findMaxRecursive(n, a);
+    int minElement = findminRecursive(n, a);
 
-    cout << "The maximum element in the array is: " << maxElement << endl;
+    cout << "The minimum element in the array is: " << minElement << endl;
 
     return 0;
 }
