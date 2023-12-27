@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int printfact(int n,int fact)
+int printfact(int n)
 {
     
     if(n==0)
@@ -8,19 +8,19 @@ int printfact(int n,int fact)
         return 1;
     }
    //printfact(n,n-1);
-    fact=(n)*printfact(n-1,n-2);
+    return (n)*printfact(n-1);
    //printfact(n-1,n-2);
 
-    return fact;
+    
     
 }
 int main()
 {
-    int n,fact=1;
+    int n,fact;
     cout<<"enter the number";
     cin>>n;
-    fact=printfact(n,fact);
+    fact=printfact(n);
     cout<<"the factorial is";
-   cout<< fact;
+    cout<< fact;
 
 }
