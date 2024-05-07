@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+</head>
+<body>
+    <h1>JavaScript Experiments</h1>
+    <button onclick="experiment2_1()">2.1 Experiment</button>
+    <button onclick="experiment2_2()">2.2 Experiment</button>
+    <button onclick="experiment2_3()">2.3 Experiment</button>
+    <button onclick="experiment2_4()">2.4 Experiment</button>
+    <button onclick="experiment2_5()">2.5 Experiment</button>
+    <button onclick="experiment2_6()">2.6 Experiment</button>
+    <button onclick="experiment2_7()">2.7 Experiment</button>
+    <button onclick="experiment2_8()">2.8 Experiment</button>
+
+    <hr>
+    <div id="output"></div>
+
+    <script>
+        function experiment2_1() {
+            var myString = "Hello, world!";
+            var myNumber = 42;
+            var myBoolean = true;
+            var myArray = [1, 2, 3, 4, 5];
+            var myObject = {name: "John", age: 30};
+
+            var additionResult = 10 + 20;
+            var subtractionResult = 30 - 10;
+            var multiplicationResult = 5 * 6;
+            var divisionResult = 50 / 10;
+            var moduloResult = 10 % 3;
+
+            var firstName = "John";
+            var lastName = "Doe";
+            var fullName = firstName + " " + lastName;
+
+            var output = "String: " + myString + "<br>" +
+                         "Number: " + myNumber + "<br>" +
+                         "Boolean: " + myBoolean + "<br>" +
+                         "Array: " + myArray + "<br>" +
+                         "Object: " + JSON.stringify(myObject) + "<br>" +
+                         "Addition Result: " + additionResult + "<br>" +
+                         "Subtraction Result: " + subtractionResult + "<br>" +
+                         "Multiplication Result: " + multiplicationResult + "<br>" +
+                         "Division Result: " + divisionResult + "<br>" +
+                         "Modulo Result: " + moduloResult + "<br>" +
+                         "Full Name: " + fullName;
+
+            document.getElementById('output').innerHTML = output;
+        }
+
+        function experiment2_2() {
+                    
+             let output = '';
+
+let x = 10;
+if (x > 5) {
+    output += "x is greater than 5<br>";
+} else {
+    output += "x is not greater than 5<br>";
+}
+
+for (let i = 0; i < 5; i++) {
+    output += i + '<br>';
+}
+
+let fruits = ["apple", "banana", "cherry"];
+for (let fruit of fruits) {
+    output += fruit + '<br>';
+}
+
+let count = 0;
+while (count < 5) {
+    output += count + '<br>';
+    count++;
+}
+
+let day = "Monday";
+switch (day) {
+    case "Monday":
+        output += "It's Monday!<br>";
+        break;
+    case "Tuesday":
+        output += "It's Tuesday!<br>";
+        break;
+    case "Wednesday":
+        output += "It's Wednesday!<br>";
+        break;
+    default:
+        output += "It's another day of the week.<br>";
+}
+
+document.getElementById('output').innerHTML = output;
+}
+       function experiment2_3() {
+
+    function factorial(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    function scopeTest() {
+        var varVariable = "Var variable";
+        let letVariable = "Let variable";
+        const constVariable = "Const variable";
+
+        return "Var Variable: " + varVariable + "<br>" +
+               "Let Variable: " + letVariable + "<br>" +
+               "Const Variable: " + constVariable;
+    }
+
+    var userInput = parseInt(prompt("Enter a number to calculate its factorial:"));
+
+    if (!isNaN(userInput)) {
+        var factorialResult = factorial(userInput);
+        var scopeTestResult = scopeTest();
+        document.getElementById('output').innerHTML = "Factorial of " + userInput + ": " + factorialResult + "<br>" +
+                                                        "Scope Test:<br>" + scopeTestResult;
+    } else {
+        document.getElementById('output').innerHTML = "Please enter a valid number.";
+    }
+}
+
+        function experiment2_4() {
+
+            var divElement = document.getElementById('output');
+var userInput = prompt("Enter text content for the <div> element:");
+if (userInput !== null && userInput.trim() !== '') {
+    divElement.textContent = userInput;
+    var input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('placeholder', 'Enter new product');
+    divElement.appendChild(input);
+    var addButton = document.createElement('button');
+    addButton.textContent = "Add Product";
+    addButton.addEventListener('click', function() {
+        var productName = input.value.trim();
+        if (productName !== '') {
+            var newLi = document.createElement('li');
+            newLi.textContent = productName;
+            ulElement.appendChild(newLi);
+            input.value = ''; 
+        } else {
+            alert("Please enter a product name!");
+        }
+    });
+    divElement.appendChild(addButton);
+
+    var button = document.createElement('button');
+    button.textContent = "Toggle Visibility";
+    button.addEventListener('click', toggleVisibility);
+    divElement.appendChild(button);
+
+    var newLi = document.createElement('li');
+    newLi.textContent = "Javascript";
+    var ulElement = document.createElement('ul');
+    ulElement.appendChild(newLi);
+    divElement.appendChild(ulElement);
+    function toggleVisibility() {
+        if (divElement.style.display === 'none') {
+            divElement.style.display = 'block';
+        } else {
+            divElement.style.display = 'none';
+        }
+    }
+    toggleVisibility();
+} else {
+    divElement.textContent = "No content provided.";
+}
+        }
+
+        function experiment2_5() {
+
+            var alertButton = document.createElement('button');
+alertButton.textContent = "Click Me";
+alertButton.addEventListener('click', function() {
+    alert("Button clicked!");
+});
+document.getElementById('output').appendChild(alertButton);
+
+var form = document.createElement('form');
+
+var nameDiv = document.createElement('div');
+var nameInput = document.createElement('input');
+nameInput.setAttribute('type', 'text');
+nameInput.setAttribute('placeholder', 'Enter your name');
+nameDiv.appendChild(nameInput);
+nameDiv.appendChild(document.createElement('br')); 
+form.appendChild(nameDiv);
+
+var rollNoDiv = document.createElement('div');
+var rollNoInput = document.createElement('input');
+rollNoInput.setAttribute('type', 'text');
+rollNoInput.setAttribute('placeholder', 'Enter your roll number');
+rollNoDiv.appendChild(rollNoInput);
+rollNoDiv.appendChild(document.createElement('br')); 
+form.appendChild(rollNoDiv);
+
+var phoneDiv = document.createElement('div');
+var phoneInput = document.createElement('input');
+phoneInput.setAttribute('type', 'text');
+phoneInput.setAttribute('placeholder', 'Enter your phone number');
+phoneDiv.appendChild(phoneInput);
+phoneDiv.appendChild(document.createElement('br')); 
+form.appendChild(phoneDiv);
+
+var submitButton = document.createElement('button');
+submitButton.textContent = "Submit";
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (nameInput.value.trim() === '') {
+        alert("Please enter your name!");
+    }
+    if (rollNoInput.value.trim() === '') {
+        alert("Please enter your roll number!");
+    }
+    if (phoneInput.value.trim() === '') {
+        alert("Please enter your phone number!");
+    }
+});
+form.appendChild(submitButton);
+
+document.getElementById('output').appendChild(form);
+
+var moveElement = document.createElement('div');
+moveElement.textContent = "Use arrow keys to move this element";
+moveElement.style.position = 'absolute';
+moveElement.style.left = '0px';
+moveElement.style.top = '0px';
+moveElement.style.backgroundColor = 'lightblue';
+moveElement.style.padding = '10px';
+document.getElementById('output').appendChild(moveElement);
+
+document.addEventListener('keydown', function(event) {
+    var key = event.key;
+    var moveStep = 10;
+    if (key === 'ArrowUp') {
+        moveElement.style.top = parseInt(moveElement.style.top) - moveStep + 'px';
+    } else if (key === 'ArrowDown') {
+        moveElement.style.top = parseInt(moveElement.style.top) + moveStep + 'px';
+    } else if (key === 'ArrowLeft') {
+        moveElement.style.left = parseInt(moveElement.style.left) - moveStep + 'px';
+    } else if (key === 'ArrowRight') {
+        moveElement.style.left = parseInt(moveElement.style.left) + moveStep + 'px';
+    }
+});
+        }
+        function experiment2_6() {
+
+            var form = document.createElement('form');
+            var input = document.createElement('input');
+            input.setAttribute('type', 'text');
+            input.setAttribute('placeholder', 'Enter some data to store');
+            form.appendChild(input);
+            var storeButton = document.createElement('button');
+            storeButton.textContent = "Store Data";
+            storeButton.addEventListener('click', function() {
+                localStorage.setItem('userData', input.value);
+                alert("Data stored successfully!");
+            });
+            form.appendChild(storeButton);
+            document.getElementById('output').appendChild(form);
+
+            var storedData = localStorage.getItem('userData');
+            if (storedData) {
+                var displayDiv = document.createElement('div');
+                displayDiv.textContent = "Stored Data: " + storedData;
+                document.getElementById('output').appendChild(displayDiv);
+            }
+
+            var clearButton = document.createElement('button');
+            clearButton.textContent = "Clear Data";
+            clearButton.addEventListener('click', function() {
+                localStorage.removeItem('userData');
+                alert("Stored data cleared!");
+                if (displayDiv) {
+                    displayDiv.remove();
+                }
+            });
+            document.getElementById('output').appendChild(clearButton);
+        }
+
+        function experiment2_7() {
+
+            fetch('https://jsonplaceholder.typicode.com/posts/1')
+                .then(response => response.json())
+                .then(data => {
+                    var outputDiv = document.getElementById('output');
+                    var titleElement = document.createElement('h3');
+                    titleElement.textContent = "Fetched Post Title:";
+                    var postTitleElement = document.createElement('p');
+                    postTitleElement.textContent = data.title;
+                    outputDiv.appendChild(titleElement);
+                    outputDiv.appendChild(postTitleElement);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    var responseData = JSON.parse(xhr.responseText);
+                    var xhrOutputDiv = document.createElement('div');
+                    xhrOutputDiv.innerHTML = "<h3>XHR Fetched Post Title:</h3><p>" + responseData.title + "</p>";
+                    document.getElementById('output').appendChild(xhrOutputDiv);
+                } else {
+                    console.error('XHR request failed');
+                }
+            };
+            xhr.onerror = function() {
+                console.error('XHR request failed');
+            };
+            xhr.send();
+        }
+
+        async function experiment2_8() {
+
+            function delayedPromise(value, delay) {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve(value);
+                    }, delay);
+                });
+            }
+
+            try {
+                var result = await delayedPromise("Resolved value", 2000);
+                console.log(result);
+                document.getElementById('output').innerHTML = "Promise resolved with value: " + result;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('output').innerHTML = "Error occurred: " + error;
+            }
+        }
+        
+    </script>
+</body>
+</html>

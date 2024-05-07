@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing with Animations</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Drawing Example with Animations</h1>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        var textX = 50;
+        var textY = 200;
+        var textDX = 2;
+
+        var imgX = 50;
+        var imgY = 250;
+        var imgDX = 1;
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Drawing text with animation
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Hello, Canvas!", textX, textY);
+
+            // Update text position
+            textX += textDX;
+            if (textX > canvas.width) {
+                textX = -200; // Reset text position when it goes off-screen
+            }
+
+            // Drawing an image with animation
+            var img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, imgX, imgY, 100, 100); // Draw the image on the canvas
+            };
+            img.src = "c:\Users\MANIKUMAR\OneDrive\Pictures\clothes.png"; // Replace with your image URL
+
+            // Update image position
+            imgX += imgDX;
+            if (imgX > canvas.width) {
+                imgX = -100; // Reset image position when it goes off-screen
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>

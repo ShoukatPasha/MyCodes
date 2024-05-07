@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Responsive Web Page and Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, section, footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        footer p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .section p {
+            margin: 5px 0;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 50%;
+                padding: 10px;
+                background-color: #b92626;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <h1>Responsive Web Page</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h2>Main Content</h2>
+        <p>This is the main content area of the document. It's styled with a white background, padding, and rounded corners.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Responsive Web Page.</p>
+    </footer>
+
+    <div class="container">
+        <header>
+            <h1>SHOUKAT PASHA</h1>
+            <p>Software Developer</p>
+        </header>
+        <section id="about" class="section">
+            <h2>About</h2>
+            <p>Experienced software developer with expertise in JavaScript, Python, and SQL. Proficient in web development and database management.</p>
+        </section>
+        <section id="services" class="section">
+            <h2>Services</h2>
+            <p>Bachelor of Science in Computer Science, XYZ University, 2010-2014</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact Information</h2>
+            <p>Email:pashashoukat2705@gmail.com</p>
+            <p>Phone: +91 8125359832</p>
+            <p>Address: 123 Main Street,hyderabad,India</p>
+        </section>
+    </div>
+</body>
+</html>
